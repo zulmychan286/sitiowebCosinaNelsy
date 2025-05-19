@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pedido por WhatsApp</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo"></div>
+    <h2>En Cocina Nelsy Tu antojo es nuestra misión</h2>
+  </header>
+
+  <form id="pedidoForm">
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" required />
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" required />
+
+    <label for="referencia">Referencia del domicilio:</label>
+    <input type="text" id="referencia" required />
+
+    <label for="pago">Forma de pago:</label>
+    <select id="pago" required>
+      <option value="">Selecciona una opción</option>
+      <option value="Efectivo">Efectivo</option>
+      <option value="Transferencia">Transferencia</option>
+    </select>
+
+    <div id="efectivoCampo" class="hidden">
+      <label for="pagoCon">¿Con cuánto vas a pagar?</label>
+      <input type="text" id="pagoCon" />
+    </div>
+
+    <div id="transferenciaCampo" class="hidden">
+      <label for="digitos">4 últimos dígitos del número de cuenta:</label>
+      <input type="text" id="digitos" maxlength="4" pattern="[0-9]{4}" />
+
+      <div class="cuenta">
+        💳 <strong>Número de cuenta para transferencias:</strong><br />
+        40-27-66-58-43-68-28-25 (Nelsy Bote)
+      </div>
+
+      <label for="comprobanteImg">Sube la captura del comprobante:</label>
+      <input type="file" id="comprobanteImg" accept="image/*" />
+      <img id="preview" class="preview-img hidden" alt="Previsualización del comprobante" />
+    </div>
+
+    <button type="submit">Enviar pedido por WhatsApp</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
